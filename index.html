@@ -5,155 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Santhosh Kumar — ML Systems Engineer | LLM & MLOps</title>
   <meta name="description" content="Santhosh Kumar — 10+ years building production ML: end-to-end MLOps, LLM Ops, FastAPI services, AWS automation and Terraform." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--glass:rgba(255,255,255,0.03);--radius:12px;--max:1100px;color-scheme:dark}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#06101a 0%, #081226 100%)}
-    a{color:inherit}
-    .page{max-width:var(--max);margin:28px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 40px rgba(2,6,23,0.7)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:68px;height:68px;border-radius:14px;background:linear-gradient(45deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800}
-    h1{margin:0;font-size:22px}
-    .subtitle{color:var(--muted);margin-top:4px}
+    :root{
+      --bg:#fdfdfc;
+      --text:#222;
+      --muted:#6b7280;
+      --accent:#1a3d7c;
+      --radius:12px;
+      --max:1000px;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
 
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:18px;align-items:start}
-    .intro{padding:20px;border-radius:14px;background:linear-gradient(180deg,var(--glass), transparent)}
-    .headline{font-size:26px;margin:0 0 8px 0}
-    .pro-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#06b6d4);font-weight:700;color:#04203a;margin-bottom:10px}
-    .about{color:var(--muted);line-height:1.5}
+    .page{max-width:var(--max);margin:0 auto;padding:40px 20px;}
 
-    /* profile */
-    .profile-card{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:center}
-    .avatar-wrap{position:relative;width:160px;height:160px;margin:0 auto;border-radius:50%;display:block}
-    .avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;border:8px solid rgba(255,255,255,0.04);box-shadow:0 14px 40px rgba(28,45,66,0.6);transition:transform .35s ease, box-shadow .35s ease}
-    .avatar:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 24px 60px rgba(28,45,66,0.75)}
-    .glow{position:absolute;inset:-8px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(124,58,237,0.18), transparent 30%), radial-gradient(circle at 70% 70%, rgba(6,182,212,0.12), transparent 30%);filter:blur(10px);z-index:-1}
+    header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:40px;}
+    .brand h1{margin:0;font-family:"Playfair Display",serif;color:var(--accent);font-size:28px;}
+    .subtitle{color:var(--muted);font-size:14px;margin-top:4px;}
 
-    .cta{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#032222;text-decoration:none;font-weight:700}
-    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    nav a{margin-left:16px;font-weight:500;color:var(--text);}
+    nav a.btn{padding:8px 14px;border-radius:6px;background:var(--accent);color:white;}
 
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
-    .card{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:center;margin-bottom:60px;}
+    .intro h2{font-family:"Playfair Display",serif;font-size:26px;margin-top:0;color:var(--accent);}
+    .intro p{color:var(--muted);font-size:15px;}
 
-    /* services */
-    .services{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-    .service{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    .service h4{margin:0 0 6px 0}
-    .muted{color:var(--muted)}
+    .profile-card{text-align:center;}
+    .avatar{width:200px;height:200px;border-radius:50%;object-fit:cover;border:6px solid #e5e7eb;box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:transform .3s ease;}
+    .avatar:hover{transform:scale(1.03);}
+    .profile-name{margin-top:14px;font-weight:600;}
+    .profile-role{color:var(--muted);font-size:14px;}
 
-    footer{margin-top:20px;color:var(--muted);text-align:center;font-size:14px}
+    section{margin-bottom:50px;}
+    h3{font-family:"Playfair Display",serif;color:var(--accent);margin-bottom:12px;}
 
-    @media (max-width:960px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+    ul{padding-left:20px;color:var(--muted);}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;}
+    .tag{padding:6px 10px;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;color:var(--muted);}
+
+    footer{margin-top:40px;padding-top:20px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px;text-align:center;}
+
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr;text-align:center;}
+      nav{margin-top:14px;}
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <header>
       <div class="brand">
-        <div class="logo">SK</div>
-        <div>
-          <h1>Santhosh Kumar</h1>
-          <div class="subtitle">ML Systems Engineer — End‑to‑End LLM Ops & MLOps · FastAPI · AWS · Terraform</div>
-        </div>
+        <h1>Santhosh Kumar</h1>
+        <div class="subtitle">ML Systems Engineer · Freelance · End‑to‑End LLM Ops & MLOps</div>
       </div>
       <nav>
-        <a class="btn" href="#contact">Hire me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="mailto:santhosh@example.com">Hire Me</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="intro">
-        <div class="pro-badge">Freelancer — Available for short & long term engagements</div>
-        <h2 class="headline">I build production ML & LLM systems that scale — from prototype to automated, observable deployments.</h2>
-        <p class="about">With 10+ years in software and data, I deliver end‑to‑end ML solutions: data pipelines, model development, FastAPI microservices, CI/CD, Terraform IaC and AWS automation. I design reproducible experiments, implement cost‑aware serving, and instrument models for monitoring and A/B evaluation. I also implement LLM Ops — fine‑tuning, retrieval (RAG), safety filters and latency‑optimized serving.</p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>What I deliver</h3>
-            <ul class="muted">
-              <li>End‑to‑end MLOps & LLM Ops (training → serving → monitoring)</li>
-              <li>Production FastAPI services for model inference & APIs</li>
-              <li>AWS automation (EKS / ECS / Lambda), infra with Terraform</li>
-              <li>CI/CD: GitHub Actions → automated deploys, tests and canaries</li>
-              <li>Model evaluation, drift detection, and observability</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Tech stack highlights</h3>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">PyTorch / Hugging Face</span>
-              <span class="tag">Terraform</span>
-              <span class="tag">AWS (EKS, Lambda)</span>
-              <span class="tag">Docker, Kubernetes</span>
-              <span class="tag">Prometheus & Grafana</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="services">
-          <div class="service">
-            <h4>LLM Ops & GenAI</h4>
-            <p class="muted">RAG pipelines, instruction‑tuning, prompt engineering, latency/cost tradeoffs, safety filters and vector DB integrations.</p>
-          </div>
-          <div class="service">
-            <h4>MLOps & Infrastructure</h4>
-            <p class="muted">Data pipelines, reproducible training, model registry, automated retraining, infra as code with Terraform and cloud automation.</p>
-          </div>
-          <div class="service">
-            <h4>APIs & Automation</h4>
-            <p class="muted">FastAPI production endpoints, autoscaling deployments, blue/green or canary rolls, and GitHub Actions pipelines.</p>
-          </div>
-          <div class="service">
-            <h4>From First Principles</h4>
-            <p class="muted">I also implement ML algorithms from scratch for clarity, correctness, and education — useful for high‑trust systems and research prototypes.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:12px">
-          <a class="btn" href="mailto:santhosh@example.com">Hire Santhosh</a>
-          <a class="btn btn-outline" href="https://github.com/santhoshkumar" target="_blank" style="margin-left:8px">View GitHub</a>
-        </div>
+        <h2>Engineering reliable ML & LLM systems from prototype to production</h2>
+        <p>With 10+ years in software and data, I deliver end‑to‑end ML and LLM Ops: model development, FastAPI microservices, AWS automation, and Terraform-based infrastructure. I focus on reproducibility, observability, and scaling — balancing research clarity with production reliability.</p>
       </div>
-
       <aside class="profile-card">
-        <div class="avatar-wrap">
-          <div class="glow"></div>
-          <img src="your-photo.jpg" alt="Santhosh Kumar" class="avatar" />
-        </div>
-        <div style="margin-top:12px;font-weight:700">Santhosh Kumar</div>
-        <div class="muted" style="font-size:13px;margin-top:6px">Freelancer · ML Systems Engineer</div>
-        <div class="cta">
-          <a class="btn" href="mailto:santhosh@example.com">Let's talk (email)</a>
-          <a class="btn btn-outline" href="#contact">Schedule call</a>
-        </div>
+        <img src="your-photo.jpg" alt="Santhosh Kumar" class="avatar" />
+        <div class="profile-name">Santhosh Kumar</div>
+        <div class="profile-role">Freelancer · ML Systems Engineer</div>
       </aside>
     </section>
 
-    <section id="projects" style="margin-top:18px">
-      <h3>Selected projects & contributions</h3>
-      <div style="color:var(--muted);margin-top:8px">
-        • <a href="https://github.com/santhoshkumar/ml-pdf-qa" target="_blank">ml-pdf-qa</a> — RAG-based PDF QA (RAG, embeddings, FastAPI serving)
-        <br>• <a href="https://github.com/santhoshkumar/arm-context-switch" target="_blank">arm-context-switch</a> — low-level Cortex‑M demo
-        <br>• <a href="https://github.com/santhoshkumar/8bit-computer" target="_blank">8bit-computer</a> — hardware design and docs
+    <section>
+      <h3>Core Services</h3>
+      <ul>
+        <li>End‑to‑end MLOps & LLM Ops (training → serving → monitoring)</li>
+        <li>Production FastAPI services for inference & APIs</li>
+        <li>AWS automation with Terraform (EKS, Lambda, ECS)</li>
+        <li>CI/CD pipelines with GitHub Actions</li>
+        <li>Model evaluation, drift detection, observability</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Tech Stack</h3>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Hugging Face</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">AWS (EKS, Lambda)</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Prometheus</span>
       </div>
     </section>
 
-    <section id="contact" style="margin-top:18px" class="card">
-      <h3>Contact & Hire</h3>
-      <p class="muted">Available for freelance and contract work: short sprints, integrations, or long-term product engagements. I typically work with teams to deliver production ML systems in 2–8 week milestones depending on scope.</p>
-      <p style="margin-top:8px">Email: <a href="mailto:santhosh@example.com">santhosh@example.com</a> • GitHub: <a href="https://github.com/santhoshkumar" target="_blank">github.com/santhoshkumar</a></p>
+    <section id="projects">
+      <h3>Selected Projects</h3>
+      <ul>
+        <li><a href="https://github.com/santhoshkumar/ml-pdf-qa" target="_blank">ml-pdf-qa</a> — RAG-based PDF QA system</li>
+        <li><a href="https://github.com/santhoshkumar/arm-context-switch" target="_blank">arm-context-switch</a> — ARM Cortex‑M context switch demo</li>
+        <li><a href="https://github.com/santhoshkumar/8bit-computer" target="_blank">8bit-computer</a> — Educational 8-bit computer design</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:santhosh@example.com">santhosh@example.com</a><br>
+         GitHub: <a href="https://github.com/santhoshkumar" target="_blank">github.com/santhoshkumar</a></p>
     </section>
 
     <footer>
-      © <span id="year"></span> Santhosh Kumar — ML Systems Engineer · Available for hire
+      © <span id="year"></span> Santhosh Kumar · ML Systems Engineer · Available for hire
     </footer>
   </main>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
