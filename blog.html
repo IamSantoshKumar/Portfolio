@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Santhosh Kumar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:Inter,system-ui,sans-serif; background:#fff; color:#111; line-height:1.7; }
+    .page { max-width:720px; margin:0 auto; padding:40px 20px; }
+    header { text-align:center; margin-bottom:40px; }
+    header h1 { font-family:"Playfair Display",serif; margin:0; font-size:28px; color:#1a3d7c; }
+    nav a { margin:0 10px; color:#1a3d7c; text-decoration:none; font-weight:500; }
+    nav a:hover { text-decoration:underline; }
+    article { margin-bottom:50px; }
+    h2 { font-family:"Playfair Display",serif; color:#1a3d7c; margin-bottom:6px; }
+    p { color:#555; margin:0; }
+    footer { margin-top:60px; border-top:1px solid #eee; padding-top:20px; color:#555; font-size:14px; text-align:center; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Blog</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </header>
+
+    <article>
+      <h2><a href="https://github.com/santhoshkumar/ml-pdf-qa" target="_blank">Building RAG-based PDF QA</a></h2>
+      <p>A walkthrough of <code>ml-pdf-qa</code>, my open-source project for question answering over PDFs using Retrieval-Augmented Generation.</p>
+    </article>
+
+    <article>
+      <h2><a href="https://github.com/santhoshkumar/arm-context-switch" target="_blank">ARM Cortex-M Context Switching</a></h2>
+      <p>Exploring my ARM Cortex-M bare-metal context switch demo. Includes QEMU simulation and minimal assembly/C setup.</p>
+    </article>
+
+    <article>
+      <h2><a href="https://github.com/santhoshkumar/8bit-computer" target="_blank">Designing an 8-bit Computer</a></h2>
+      <p>Documenting my educational 8-bit computer project. Covers ALU, control unit, and memory built on breadboards.</p>
+    </article>
+
+    <footer>
+      © <span id="year"></span> Santhosh Kumar · Writing about ML Systems & LLM Ops
+    </footer>
+  </main>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
