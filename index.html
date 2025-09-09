@@ -36,23 +36,32 @@
     section { margin-bottom: 3rem; }
 
     /* Timeline */
-    .timeline { border-left: 2px solid #ccc; margin-left: 1rem; padding-left: 1rem; list-style: none; }
-    .timeline li { position: relative; margin-bottom: 1.6rem; padding-left: 0.5rem; display: flex; align-items: flex-start; }
-    .timeline li::before {
-      content: ""; position: absolute; left: -1.1rem; top: 0.8rem;
-      width: 0.55rem; height: 0.55rem; background: #0066cc; border-radius: 50%;
+    .timeline { margin-left: 1rem; padding-left: 1rem; list-style: none; }
+    .timeline li {
+      position: relative;
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: flex-start;
+      padding-left: 0.5rem;
     }
+
     .timeline strong { display: block; font-weight: 600; }
     .timeline small { color: #666; font-size: 0.9rem; }
 
-    .timeline-logo {
-      width: 50px;   /* Increased size for visibility */
+    /* Company icons for timeline */
+    .timeline-icon {
+      font-size: 1.8rem;
+      width: 50px;
       height: 50px;
-      border-radius: 50%;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-right: 0.8rem;
       flex-shrink: 0;
     }
+    .timeline-icon.accenture { color: #00a6d6; }
+    .timeline-icon.hcl { color: #ff6600; }
+    .timeline-icon.fis { color: #0072ce; }
 
     /* GitHub activity */
     .github-activity { list-style: none; padding-left: 0; margin-left: 0; }
@@ -67,8 +76,6 @@
 
     @media (prefers-color-scheme: dark) {
       body { background: #111; color: #eee; }
-      .timeline { border-left-color: #4ea3ff; }
-      .timeline li::before { background: #4ea3ff; }
       .timeline small { color: #aaa; }
       .github-activity small { color: #aaa; }
       footer svg { fill: #ccc; }
@@ -104,21 +111,21 @@
     <h2>Work Timeline</h2>
     <ul class="timeline">
       <li>
-        <img src="logos/accenture.png" alt="Accenture" class="timeline-logo">
+        <span class="timeline-icon accenture">🔹</span>
         <div>
           <strong>2025 — Accenture</strong>
           <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
         </div>
       </li>
       <li>
-        <img src="logos/hcl.png" alt="HCL" class="timeline-logo">
+        <span class="timeline-icon hcl">🔶</span>
         <div>
           <strong>2019 — HCL</strong>
           <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
         </div>
       </li>
       <li>
-        <img src="logos/fis.png" alt="FIS" class="timeline-logo">
+        <span class="timeline-icon fis">⚡</span>
         <div>
           <strong>2015 — FIS</strong>
           <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
