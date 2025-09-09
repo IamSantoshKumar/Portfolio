@@ -8,103 +8,47 @@
     body {
       font-family: system-ui, -apple-system, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 2rem;
       background: #fafafa;
       color: #222;
       line-height: 1.6;
       max-width: 750px;
-      margin: auto;
-      padding: 2rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    h1, h2 {
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
+    h1, h2 { font-weight: 600; margin-bottom: 0.6rem; }
+    a { color: #0066cc; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    header { text-align: center; margin-bottom: 2rem; }
 
-    nav {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      font-weight: 500;
-    }
+    nav { text-align: center; margin-bottom: 2rem; }
+    nav a { margin: 0 1rem; font-weight: 500; }
 
-    .wave {
-      display: inline-block;
-      animation: wave-animation 2s infinite;
-      transform-origin: 70% 70%;
-    }
+    .wave { display: inline-block; animation: wave-animation 2s infinite; transform-origin: 70% 70%; }
     @keyframes wave-animation {
-      0% { transform: rotate(0deg); }
-      10% { transform: rotate(14deg); }
-      20% { transform: rotate(-8deg); }
-      30% { transform: rotate(14deg); }
-      40% { transform: rotate(-4deg); }
-      50% { transform: rotate(10deg); }
-      60% { transform: rotate(0deg); }
-      100% { transform: rotate(0deg); }
+      0% { transform: rotate(0deg); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); } 40% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); } 100% { transform: rotate(0deg); }
     }
 
     section { margin-bottom: 3rem; }
 
     /* Timeline */
-    .timeline {
-      border-left: 2px solid #ccc;
-      margin-left: 1rem;
-      padding-left: 1rem;
-      list-style: none;
-    }
-    .timeline li {
-      position: relative;
-      margin-bottom: 1.4rem;
-      padding-left: 0.5rem;
-    }
+    .timeline { border-left: 2px solid #ccc; margin-left: 1rem; padding-left: 1rem; list-style: none; }
+    .timeline li { position: relative; margin-bottom: 1.4rem; padding-left: 0.5rem; }
     .timeline li::before {
-      content: "";
-      position: absolute;
-      left: -1.1rem;
-      top: 0.5rem;
-      width: 0.55rem;
-      height: 0.55rem;
-      background: #0066cc;
-      border-radius: 50%;
+      content: ""; position: absolute; left: -1.1rem; top: 0.5rem;
+      width: 0.55rem; height: 0.55rem; background: #0066cc; border-radius: 50%;
     }
-    .timeline strong {
-      display: block;
-      font-weight: 600;
-    }
-    .timeline small {
-      color: #666;
-      font-size: 0.9rem;
-    }
+    .timeline strong { display: block; font-weight: 600; }
+    .timeline small { color: #666; font-size: 0.9rem; }
 
     /* Footer icons */
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    footer a {
-      margin: 0 0.6rem;
-      display: inline-block;
-    }
-    footer svg {
-      width: 22px;
-      height: 22px;
-      fill: #333;
-    }
+    footer { text-align: center; margin-top: 3rem; }
+    footer a { margin: 0 0.6rem; display: inline-block; }
+    footer svg { width: 22px; height: 22px; fill: #333; }
     footer a:hover svg { fill: #0066cc; }
 
     @media (prefers-color-scheme: dark) {
@@ -118,6 +62,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1><span class="wave">👋</span> Hi, I’m Santhosh Kumar</h1>
     <p>Data Scientist · LLMs · Algorithms · Statistics · Creative Problem Solver</p>
@@ -132,23 +77,12 @@
 
   <section id="home">
     <h2>Home</h2>
-    <p>
-      I explore the space where algorithms meet creativity. My focus is on 
-      building privacy-first, production-ready AI systems — from fine-tuned LLMs 
-      to scalable infra on AWS. I balance statistics, research, and engineering 
-      to deliver elegant solutions to complex problems.
-    </p>
+    <p>Turning complexity into clarity. I explore the intersection of algorithms, creativity, and privacy-first AI at scale.</p>
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p>
-      Experienced across healthcare, HR, finance, and sales domains.  
-      Skilled in RAG-based systems, LLM fine-tuning (LoRA with LLaMA & Mistral), 
-      enterprise chatbots, anomaly detection, and AWS infra with Terraform & EKS.  
-      I share insights on <a href="https://santhoshnotes.bearblog.dev">Bearblog</a>, 
-      <a href="https://medium.com/@shanvsanthosh">Medium</a>, and GitHub.
-    </p>
+    <p>I’ve built intelligent systems across healthcare, HR, finance, and sales — from RAG pipelines and fine-tuned LLMs (LLaMA & Mistral) to enterprise deployments on AWS. I share experiments and insights on <a href="https://santhoshnotes.bearblog.dev">Bearblog</a>, <a href="https://medium.com/@shanvsanthosh">Medium</a>, and GitHub.</p>
   </section>
 
   <section id="work">
@@ -183,10 +117,24 @@
     </ul>
   </section>
 
+  <section id="github">
+    <h2>Recent GitHub Activities</h2>
+    <ul class="timeline">
+      <li>
+        <strong>ARM Cortex-M Context Switch Experiment</strong>
+        <small>PendSV/SysTick-based time-sliced threading simulation in QEMU</small>
+      </li>
+      <li>
+        <strong>Minimalist Portfolio + Blog Setup</strong>
+        <small>Static HTML/CSS site hosted on GitHub Pages, privacy-first design</small>
+      </li>
+      <li>
+        <strong>RAG-based PDF QA System</strong>
+        <small>LLM retrieval-augmented question answering pipeline for client documents</small>
+      </li>
+    </ul>
+  </section>
+
   <footer>
     <a href="https://github.com/"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-1.8c-3.4.7-4.2-1.6-4.2-1.6-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.6.3-1.1.6-1.4-2.7-.3-5.6-1.3-5.6-6a4.7 4.7 0 0 1 1.2-3.3c-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.4 1.2a11.6 11.6 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.7-2.9 5.7-5.6 6 .4.4.7.9.7 1.8v2.6c0 .3.2.6.8.5A12 12 0 0 0 12 .3"/></svg></a>
-    <a href="https://twitter.com/"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.1 1 5.4 5.4 0 0 0 2.4-3 10.7 10.7 0 0 1-3.4 1.3A5.4 5.4 0 0 0 16 2a5.4 5.4 0 0 0-5.4 5.4c0 .4 0 .8.1 1.1A15.3 15.3 0 0 1 2 3.1a5.4 5.4 0 0 0 1.7 7.2 5.3 5.3 0 0 1-2.5-.7v.1c0 2.6 1.9 4.8 4.4 5.3a5.4 5.4 0 0 1-2.4.1 5.4 5.4 0 0 0 5 3.7A10.8 10.8 0 0 1 1 21a15.3 15.3 0 0 0 8.3 2.4c10 0 15.5-8.3 15.5-15.5v-.7A11 11 0 0 0 23 3z"/></svg></a>
-    <a href="/rss.xml"><svg viewBox="0 0 24 24"><path d="M6.2 15.9a2.1 2.1 0 1 1-4.2 0 2.1 2.1 0 0 1 4.2 0zM.8 9.7v3.1a11.2 11.2 0 0 1 11.2 11.2h3.1C15.1 16.2 8.6 9.7.8 9.7zM.8 3v3.1A17.9 17.9 0 0 1 18.7 24h3.1C21.8 12 12 .8.8 3z"/></svg></a>
-  </footer>
-</body>
-</html>
+    <a href="https://twitter.com/"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.1 1 5.4 5.4 0 0 0 2.4-3 10.7 10.7 0 0 1-3.4 1.3A5.4 5.4 0 0 0 16 2a5.4 5.4 0 0 0-5.4 5.4c0 .4 0 .8.1 1.1A15.3 15.3 0 0 1 2 3.1a5.4 5.4 0 0 0 1.7 7.2 5.3 5.3 0 0 1-2.5-.7v.1c0 2.6 1.9 4.8
