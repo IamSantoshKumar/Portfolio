@@ -37,17 +37,27 @@
 
     /* Timeline */
     .timeline { border-left: 2px solid #ccc; margin-left: 1rem; padding-left: 1rem; list-style: none; }
-    .timeline li { position: relative; margin-bottom: 1.4rem; padding-left: 0.5rem; }
+    .timeline li { position: relative; margin-bottom: 1.6rem; padding-left: 0.5rem; display: flex; align-items: flex-start; }
     .timeline li::before {
-      content: ""; position: absolute; left: -1.1rem; top: 0.5rem;
+      content: ""; position: absolute; left: -1.1rem; top: 0.8rem;
       width: 0.55rem; height: 0.55rem; background: #0066cc; border-radius: 50%;
     }
     .timeline strong { display: block; font-weight: 600; }
     .timeline small { color: #666; font-size: 0.9rem; }
 
+    .timeline-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 0.6rem;
+      flex-shrink: 0;
+    }
+
     /* GitHub activity */
     .github-activity { list-style: none; padding-left: 0; margin-left: 0; }
-    .github-activity li { margin-bottom: 0.8rem; }
+    .github-activity li { margin-bottom: 0.8rem; display: flex; align-items: center; }
+    .github-activity img { width: 22px; height: 22px; margin-right: 0.5rem; }
     .github-activity small { color: #666; font-size: 0.9rem; }
 
     /* Footer icons */
@@ -95,16 +105,25 @@
     <h2>Work Timeline</h2>
     <ul class="timeline">
       <li>
-        <strong>2025 — Accenture</strong>
-        <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
+        <img src="logos/accenture.png" alt="Accenture" class="timeline-logo">
+        <div>
+          <strong>2025 — Accenture</strong>
+          <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
+        </div>
       </li>
       <li>
-        <strong>2019 — HCL</strong>
-        <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
+        <img src="logos/hcl.png" alt="HCL" class="timeline-logo">
+        <div>
+          <strong>2019 — HCL</strong>
+          <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
+        </div>
       </li>
       <li>
-        <strong>2015 — FIS</strong>
-        <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
+        <img src="logos/fis.png" alt="FIS" class="timeline-logo">
+        <div>
+          <strong>2015 — FIS</strong>
+          <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
+        </div>
       </li>
     </ul>
   </section>
@@ -113,28 +132,37 @@
     <h2>Blog Timeline</h2>
     <ul class="timeline">
       <li>
-        <strong><a href="https://santhoshnotes.bearblog.dev/elegance-lies-in-simple-things/">Elegance Lies in Simple Things</a></strong>
-        <small>Bearblog · 2024-07-15</small>
+        <img src="logos/bearblog.png" alt="Bearblog" class="timeline-logo">
+        <div>
+          <strong><a href="https://santhoshnotes.bearblog.dev/elegance-lies-in-simple-things/">Elegance Lies in Simple Things</a></strong>
+          <small>Bearblog · 2024-07-15</small>
+        </div>
       </li>
       <li>
-        <strong><a href="https://medium.com/@shanvsanthosh/building-an-8-bit-computer-a-journey-into-classical-computing-13d250c3827a">Building an 8-Bit Computer</a></strong>
-        <small>Medium · 2023-12-10</small>
+        <img src="logos/medium.png" alt="Medium" class="timeline-logo">
+        <div>
+          <strong><a href="https://medium.com/@shanvsanthosh/building-an-8-bit-computer-a-journey-into-classical-computing-13d250c3827a">Building an 8-Bit Computer</a></strong>
+          <small>Medium · 2023-12-10</small>
+        </div>
       </li>
     </ul>
 
     <h3>Recent GitHub Activities</h3>
     <ul class="github-activity">
       <li>
-        <strong>ARM Cortex-M Context Switch Experiment</strong><br>
-        <small>PendSV/SysTick-based time-sliced threading simulation in QEMU</small>
+        <img src="logos/github.png" alt="GitHub">
+        <div><strong>ARM Cortex-M Context Switch Experiment</strong><br>
+        <small>PendSV/SysTick-based time-sliced threading simulation in QEMU</small></div>
       </li>
       <li>
-        <strong>Minimalist Portfolio & Blog Setup</strong><br>
-        <small>Static HTML/CSS site hosted on GitHub Pages, privacy-first design</small>
+        <img src="logos/github.png" alt="GitHub">
+        <div><strong>Minimalist Portfolio & Blog Setup</strong><br>
+        <small>Static HTML/CSS site hosted on GitHub Pages, privacy-first design</small></div>
       </li>
       <li>
-        <strong>RAG-based PDF QA System</strong><br>
-        <small>LLM retrieval-augmented question answering pipeline for client documents</small>
+        <img src="logos/github.png" alt="GitHub">
+        <div><strong>RAG-based PDF QA System</strong><br>
+        <small>LLM retrieval-augmented question answering pipeline for client documents</small></div>
       </li>
     </ul>
   </section>
