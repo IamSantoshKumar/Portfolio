@@ -1,332 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Santhosh Kumar — GenAI Specialist & LLM Deployment</title>
-  <meta name="description" content="Santhosh Kumar — GenAI specialist. End-to-end LLM deployment on AWS, MLOps, low-level systems tinkerer, maker of minimalist tools." />
-  <meta name="author" content="Santhosh Kumar" />
-  <meta property="og:title" content="Santhosh Kumar — GenAI Specialist" />
-  <meta property="og:description" content="End-to-end LLM deployment, AWS MLOps, building small systems from scratch. Portfolio & blog." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Santhosh Kumar — Blog & Portfolio</title>
+  <meta name="description" content="Santhosh Kumar · GenAI specialist and end-to-end AWS deployment expert. Blog and portfolio.">
   <style>
-    :root{
-      --bg: #0f1115;
-      --card: rgba(255,255,255,0.03);
-      --muted: rgba(255,255,255,0.6);
-      --accent-a: #7c5cff;
-      --accent-b: #00e0b8;
-      --glass: linear-gradient(135deg, rgba(124,92,255,0.14), rgba(0,224,184,0.08));
-      color-scheme: dark;
+    :root {
+      --bg: #fff;
+      --fg: #111;
+      --muted: #555;
+      --link: #0066cc;
+      --max-width: 700px;
     }
-
-    /* Respect user preference for light mode */
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #ffffff;
-        --card: rgba(15,17,21,0.03);
-        --muted: rgba(0,0,0,0.6);
-        --glass: linear-gradient(135deg, rgba(124,92,255,0.06), rgba(0,224,184,0.04));
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --fg: #eee;
+        --muted: #aaa;
+        --link: #4ea3ff;
       }
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent),
-                  radial-gradient(900px 500px at 90% 90%, rgba(0,224,184,0.04), transparent),
-                  var(--bg);
-      color: #fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding: clamp(18px, 3vw, 40px);
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--fg);
+      display: flex;
+      justify-content: center;
     }
-
-    .wrap{
-      width:100%;
-      max-width:1000px;
+    main {
+      width: 100%;
+      max-width: var(--max-width);
     }
-
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:28px;
+    header {
+      margin-bottom: 2rem;
     }
-
-    .brand{
-      display:flex;
-      gap:16px;
-      align-items:center;
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
     }
-
-    .avatar{
-      width:56px;height:56px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent-a),var(--accent-b));
-      display:grid;place-items:center;
-      font-weight:700;color:#0b0b0b;font-size:20px;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    header p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
-
-    h1{margin:0;font-size:clamp(20px,3.6vw,34px);line-height:1.05}
-    .sub{color:var(--muted);font-weight:600;font-size:13px;letter-spacing:0.2px}
-
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:14px;
-      padding:8px 12px;border-radius:10px;
-      transition: all .18s ease;
+    nav {
+      margin-top: 1rem;
     }
-    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:28px;
-      align-items:start;
+    nav a {
+      margin-right: 1rem;
+      color: var(--link);
+      text-decoration: none;
     }
-
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
+    nav a:hover {
+      text-decoration: underline;
     }
-
-    .card{
-      background:var(--card);
-      border-radius:16px;padding:20px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    section h2 {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
     }
-
-    .intro{
-      padding:28px;border-radius:14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    ul.posts {
+      list-style: none;
+      padding: 0;
     }
-
-    .role{
-      display:inline-grid;
-      grid-auto-flow:column;gap:8px;align-items:center;
-      background:var(--glass);padding:8px;border-radius:999px;font-size:13px;color:var(--muted)
+    ul.posts li {
+      margin: 0.6rem 0;
     }
-
-    .lead{
-      margin-top:18px;margin-bottom:18px;font-size:clamp(16px,2.6vw,18px);font-weight:500;color:#fff;
+    ul.posts a {
+      color: var(--fg);
+      text-decoration: none;
     }
-
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .pill{padding:8px 12px;border-radius:999px;font-size:13px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    .side{
-      position:relative;
-      display:flex;flex-direction:column;gap:14px;
-      align-self:flex-start;
+    ul.posts a:hover {
+      text-decoration: underline;
     }
-
-    .metrics{display:flex;gap:12px;flex-wrap:wrap}
-    .metric{flex:1;min-width:120px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);text-align:center}
-    .metric h3{margin:0;font-size:18px}
-    .metric p{margin:6px 0 0;color:var(--muted);font-size:12px}
-
-    section.projects{margin-top:22px;display:grid;gap:12px}
-    .project{
-      padding:16px;border-radius:12px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(0deg, rgba(255,255,255,0.01), transparent);
-      transition:transform .18s ease, box-shadow .18s ease;
-      border: 1px solid rgba(255,255,255,0.03);
+    ul.posts time {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
-    .project:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
-    .project .tag{font-size:12px;color:var(--muted)}
-    .project h4{margin:0;font-size:16px}
-    .project p{margin:0;color:var(--muted);font-size:13px}
-
-    .blog-list{display:flex;flex-direction:column;gap:10px}
-    .post{
-      display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;
-      border:1px solid rgba(255,255,255,0.03);
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
-    .post .meta{color:var(--muted);font-size:13px}
-    .post a{color:#fff;text-decoration:none;font-weight:600}
-
-    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .contact{display:flex;gap:10px;align-items:center}
-
-    /* Minimal decorative line */
-    .line{
-      height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
-      margin:18px 0;border-radius:2px;
-    }
-
-    /* small print/resume btn */
-    .btn{
-      display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-      color:inherit;
-    }
-
-    /* subtle animated corner accent (pure CSS) */
-    .accent{
-      position:absolute;width:140px;height:140px;right:-30px;top:-30px;border-radius:18px;
-      background:conic-gradient(from 180deg at 50% 50%, rgba(124,92,255,0.14), rgba(0,224,184,0.08));
-      filter:blur(20px);opacity:0.85;transform:rotate(12deg);
-      pointer-events:none;
-    }
-
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <main>
     <header>
-      <div class="brand">
-        <div class="avatar" aria-hidden="true">SK</div>
-        <div>
-          <h1>Santhosh Kumar</h1>
-          <div class="sub">GenAI Specialist · LLM Deployment · AWS MLOps · Systems tinkerer</div>
-        </div>
-      </div>
-
-      <nav aria-label="Top navigation">
-        <a href="#projects">Projects</a>
+      <h1>Santhosh Kumar</h1>
+      <p>GenAI Specialist · End-to-end AWS Deployment · Minimalist tinkerer</p>
+      <nav>
+        <a href="/">Home</a>
         <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="#about">About</a>
       </nav>
     </header>
 
-    <main>
-      <div class="hero">
-        <div class="card intro" role="region" aria-labelledby="intro-heading">
-          <div class="role" id="intro-heading">Privacy-first · Minimal · Production-ready</div>
-          <div class="lead">I design and ship GenAI systems — from dataset curation and model fine-tuning to EKS-based deployment and MLOps pipelines. I enjoy building things from first principles: small, auditable, and efficient.</div>
+    <section id="blog">
+      <h2>Blog</h2>
+      <ul class="posts">
+        <li>
+          <a href="blog/kde-density.html">Why density-based models matter in practice</a>
+          <time>Sep 1, 2025</time>
+        </li>
+        <li>
+          <a href="blog/eks-terraform.html">Simple reproducible EKS + Terraform pipeline</a>
+          <time>Jul 15, 2025</time>
+        </li>
+        <li>
+          <a href="blog/8bit.html">Building an 8-bit computer from scratch</a>
+          <time>Dec 11, 2024</time>
+        </li>
+      </ul>
+    </section>
 
-          <div class="skills" aria-hidden="false">
-            <span class="pill">LLM Fine-tuning</span>
-            <span class="pill">EKS · Terraform · CI/CD</span>
-            <span class="pill">RAG · Retrieval</span>
-            <span class="pill">ARM Cortex-M · Embedded</span>
-            <span class="pill">Privacy-focused design</span>
-          </div>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I design and deploy AI systems — from dataset curation and fine-tuning to cloud deployment with EKS and CI/CD.
+        I also enjoy building small computers from scratch to understand fundamentals.
+      </p>
+    </section>
 
-          <div class="line" role="presentation"></div>
-
-          <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading" style="font-size:15px;margin:0 0 10px 0">Selected projects</h2>
-            <div class="projects">
-              <article class="project" aria-labelledby="p1">
-                <div class="tag">MLOps / Infra</div>
-                <h4 id="p1">EKS + Terraform CI/CD for LLM Ops</h4>
-                <p>Two-node EKS demo with GitHub Actions, auto deploy, and canary-ready manifests — focused on reproducibility and destroy-on-demand.</p>
-              </article>
-
-              <article class="project" aria-labelledby="p2">
-                <div class="tag">LLM / RAG</div>
-                <h4 id="p2">RAG-based PDF QA app</h4>
-                <p>PDF downloader + extractor + RAG QA engine with privacy controls and evaluation harness.</p>
-              </article>
-
-              <article class="project" aria-labelledby="p3">
-                <div class="tag">Hardware & low-level</div>
-                <h4 id="p3">8-bit computer from scratch</h4>
-                <p>Built an 8-bit computer and ALU with breadboards and discrete components — teaching-level system design from first principles.</p>
-              </article>
-            </div>
-          </section>
-
-          <div style="margin-top:18px;">
-            <a class="btn" href="#contact">Work with me</a>
-            <a class="btn" href="#blog" style="margin-left:8px">Read my blog</a>
-          </div>
-        </div>
-
-        <aside class="side card" aria-labelledby="about-stats">
-          <div class="accent" aria-hidden="true"></div>
-          <div>
-            <div id="about-stats" style="font-weight:700;margin-bottom:8px">At a glance</div>
-            <div class="metrics">
-              <div class="metric">
-                <h3>8+</h3>
-                <p>Years building systems</p>
-              </div>
-              <div class="metric">
-                <h3>LLM</h3>
-                <p>Fine-tuning & evaluation</p>
-              </div>
-              <div class="metric">
-                <h3>Cloud</h3>
-                <p>AWS · EKS · Terraform</p>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px">
-            <h4 style="margin:0 0 6px 0">Quick links</h4>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
-              <a class="btn" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <section id="blog" class="card" style="margin-top:20px;">
-        <h2 style="margin:0 0 10px 0">Latest from the blog</h2>
-        <p style="margin:0 0 12px 0;color:var(--muted)">Short, technical posts about building models, infra, and system-level tinkering.</p>
-
-        <div class="blog-list" role="list">
-          <!-- Add posts as simple HTML files or link to markdown-rendered pages -->
-          <div class="post" role="listitem">
-            <div>
-              <a href="/blog/2025-09-01-kde-density.html">Why density-based models matter in practice</a>
-              <div class="meta">Sep 1, 2025 · 6 min read</div>
-            </div>
-            <div class="meta">Tags: ML · Design</div>
-          </div>
-
-          <div class="post" role="listitem">
-            <div>
-              <a href="/blog/2025-07-15-eks-terraform-ci-cd.html">EKS + Terraform: simple reproducible pipeline</a>
-              <div class="meta">Jul 15, 2025 · 8 min read</div>
-            </div>
-            <div class="meta">Tags: Infra · DevOps</div>
-          </div>
-
-          <div class="post" role="listitem">
-            <div>
-              <a href="/blog/2024-12-11-8bit.html">Building an 8-bit computer from scratch</a>
-              <div class="meta">Dec 11, 2024 · 12 min read</div>
-            </div>
-            <div class="meta">Tags: Hardware · Systems</div>
-          </div>
-        </div>
-      </section>
-
-      <footer id="contact">
-        <div class="contact">
-          <div>
-            <div style="font-weight:700">Contact</div>
-            <div class="sub">santhosh@example.com · Bangalore, India</div>
-          </div>
-
-          <div style="margin-left:12px">
-            <a class="btn" href="mailto:santhosh@example.com">Email me</a>
-          </div>
-        </div>
-
-        <div style="text-align:right">
-          <div>© Santhosh Kumar — Minimal portfolio</div>
-          <div class="sub" style="margin-top:6px">Built with only HTML & CSS · Host on GitHub Pages</div>
-        </div>
-      </footer>
-
-    </main>
-  </div>
+    <footer>
+      © 2025 Santhosh Kumar · <a href="mailto:santhosh@example.com">Contact</a>
+    </footer>
+  </main>
 </body>
 </html>
