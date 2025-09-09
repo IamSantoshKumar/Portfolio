@@ -33,8 +33,8 @@
   /* Timeline */
   .timeline {
     position: relative;
-    margin-left: 40px;
-    padding-left: 20px;
+    margin-left: 0;
+    padding-left: 0;
     list-style: none;
   }
 
@@ -42,7 +42,7 @@
   .timeline::before {
     content: '';
     position: absolute;
-    left: 25px; /* line position */
+    left: 50px; /* line position left of logo */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -51,14 +51,27 @@
 
   .timeline li {
     position: relative;
-    margin-bottom: 2rem;
     display: flex;
     align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  /* Dashboard-like box for each timeline item */
+  .timeline-box {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-left: 80px; /* offset from vertical line */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    flex: 1;
   }
 
   .timeline-logo {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin-right: 1rem;
     flex-shrink: 0;
   }
@@ -69,8 +82,7 @@
     object-fit: contain;
   }
 
-  .timeline-content { max-width: 600px; }
-  .timeline-content strong { display: block; font-weight: 600; }
+  .timeline-content strong { display: block; font-weight: 600; margin-bottom: 0.2rem; }
   .timeline-content small { color: #666; font-size: 0.9rem; }
 
   /* GitHub activity */
@@ -91,6 +103,7 @@
     .timeline::before { background: #444; }
     footer svg { fill: #ccc; }
     footer a:hover svg { fill: #4ea3ff; }
+    .timeline-box { background: #1c1c1c; border-color: #333; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
   }
 </style>
 </head>
@@ -122,24 +135,30 @@
   <h2>Work Timeline</h2>
   <ul class="timeline">
     <li>
-      <div class="timeline-logo"><img src="logos/accenture.png" alt="Accenture"></div>
-      <div class="timeline-content">
-        <strong>2025 — Accenture</strong>
-        <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
+      <div class="timeline-box">
+        <div class="timeline-logo"><img src="logos/accenture.png" alt="Accenture"></div>
+        <div class="timeline-content">
+          <strong>2025 — Accenture</strong>
+          <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
+        </div>
       </div>
     </li>
     <li>
-      <div class="timeline-logo"><img src="logos/hcl.png" alt="HCL"></div>
-      <div class="timeline-content">
-        <strong>2019 — HCL</strong>
-        <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
+      <div class="timeline-box">
+        <div class="timeline-logo"><img src="logos/hcl.png" alt="HCL"></div>
+        <div class="timeline-content">
+          <strong>2019 — HCL</strong>
+          <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
+        </div>
       </div>
     </li>
     <li>
-      <div class="timeline-logo"><img src="logos/fis.png" alt="FIS"></div>
-      <div class="timeline-content">
-        <strong>2015 — FIS</strong>
-        <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
+      <div class="timeline-box">
+        <div class="timeline-logo"><img src="logos/fis.png" alt="FIS"></div>
+        <div class="timeline-content">
+          <strong>2015 — FIS</strong>
+          <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
+        </div>
       </div>
     </li>
   </ul>
@@ -149,17 +168,21 @@
   <h2>Blog Timeline</h2>
   <ul class="timeline">
     <li>
-      <div class="timeline-logo"><!-- optional placeholder icon --></div>
-      <div class="timeline-content">
-        <strong><a href="https://santhoshnotes.bearblog.dev/elegance-lies-in-simple-things/">Elegance Lies in Simple Things</a></strong>
-        <small>Bearblog · 2024-07-15</small>
+      <div class="timeline-box">
+        <div class="timeline-logo"></div>
+        <div class="timeline-content">
+          <strong><a href="https://santhoshnotes.bearblog.dev/elegance-lies-in-simple-things/">Elegance Lies in Simple Things</a></strong>
+          <small>Bearblog · 2024-07-15</small>
+        </div>
       </div>
     </li>
     <li>
-      <div class="timeline-logo"><!-- optional placeholder icon --></div>
-      <div class="timeline-content">
-        <strong><a href="https://medium.com/@shanvsanthosh/building-an-8-bit-computer-a-journey-into-classical-computing-13d250c3827a">Building an 8-Bit Computer</a></strong>
-        <small>Medium · 2023-12-10</small>
+      <div class="timeline-box">
+        <div class="timeline-logo"></div>
+        <div class="timeline-content">
+          <strong><a href="https://medium.com/@shanvsanthosh/building-an-8-bit-computer-a-journey-into-classical-computing-13d250c3827a">Building an 8-Bit Computer</a></strong>
+          <small>Medium · 2023-12-10</small>
+        </div>
       </div>
     </li>
   </ul>
