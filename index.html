@@ -38,11 +38,10 @@
     list-style: none;
   }
 
-  /* Vertical line */
   .timeline::before {
     content: '';
     position: absolute;
-    left: 50px; /* line position left of logo */
+    left: 70px; /* vertical line position */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -56,7 +55,15 @@
     margin-bottom: 2rem;
   }
 
-  /* Dashboard-like box for each timeline item */
+  .timeline-year {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    font-weight: 600;
+    text-align: right;
+    color: #666;
+  }
+
   .timeline-box {
     display: flex;
     align-items: flex-start;
@@ -86,9 +93,25 @@
   .timeline-content small { color: #666; font-size: 0.9rem; }
 
   /* GitHub activity */
-  .github-activity { list-style: none; padding-left: 0; margin-left: 0; }
-  .github-activity li { margin-bottom: 0.8rem; display: block; }
-  .github-activity small { color: #666; font-size: 0.9rem; }
+  .github-activity {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .github-activity li {
+    margin-bottom: 1.2rem;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid #0066cc;
+    background: #fefefe;
+    border-radius: 4px;
+  }
+
+  .github-activity li p {
+    margin: 0.2rem 0 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
 
   /* Footer icons */
   footer { text-align: center; margin-top: 3rem; }
@@ -96,15 +119,6 @@
   footer svg { width: 22px; height: 22px; fill: #333; }
   footer a:hover svg { fill: #0066cc; }
 
-  @media (prefers-color-scheme: dark) {
-    body { background: #111; color: #eee; }
-    .timeline-content small { color: #aaa; }
-    .github-activity small { color: #aaa; }
-    .timeline::before { background: #444; }
-    footer svg { fill: #ccc; }
-    footer a:hover svg { fill: #4ea3ff; }
-    .timeline-box { background: #1c1c1c; border-color: #333; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
-  }
 </style>
 </head>
 <body>
@@ -135,28 +149,31 @@
   <h2>Work Timeline</h2>
   <ul class="timeline">
     <li>
+      <span class="timeline-year">2025</span>
       <div class="timeline-box">
         <div class="timeline-logo"><img src="logos/accenture.png" alt="Accenture"></div>
         <div class="timeline-content">
-          <strong>2025 — Accenture</strong>
+          <strong>Accenture</strong>
           <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
         </div>
       </div>
     </li>
     <li>
+      <span class="timeline-year">2019</span>
       <div class="timeline-box">
         <div class="timeline-logo"><img src="logos/hcl.png" alt="HCL"></div>
         <div class="timeline-content">
-          <strong>2019 — HCL</strong>
+          <strong>HCL</strong>
           <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
         </div>
       </div>
     </li>
     <li>
+      <span class="timeline-year">2015</span>
       <div class="timeline-box">
         <div class="timeline-logo"><img src="logos/fis.png" alt="FIS"></div>
         <div class="timeline-content">
-          <strong>2015 — FIS</strong>
+          <strong>FIS</strong>
           <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
         </div>
       </div>
@@ -168,6 +185,7 @@
   <h2>Blog Timeline</h2>
   <ul class="timeline">
     <li>
+      <span class="timeline-year">2024</span>
       <div class="timeline-box">
         <div class="timeline-logo"></div>
         <div class="timeline-content">
@@ -177,6 +195,7 @@
       </div>
     </li>
     <li>
+      <span class="timeline-year">2023</span>
       <div class="timeline-box">
         <div class="timeline-logo"></div>
         <div class="timeline-content">
@@ -190,16 +209,16 @@
   <h3>Recent GitHub Activities</h3>
   <ul class="github-activity">
     <li>
-      <div><strong>ARM Cortex-M Context Switch Experiment</strong><br>
-      <small>PendSV/SysTick-based time-sliced threading simulation in QEMU</small></div>
+      <strong>ARM Cortex-M Context Switch Experiment</strong>
+      <p>PendSV/SysTick-based time-sliced threading simulation in QEMU</p>
     </li>
     <li>
-      <div><strong>Minimalist Portfolio & Blog Setup</strong><br>
-      <small>Static HTML/CSS site hosted on GitHub Pages, privacy-first design</small></div>
+      <strong>Minimalist Portfolio & Blog Setup</strong>
+      <p>Static HTML/CSS site hosted on GitHub Pages, privacy-first design</p>
     </li>
     <li>
-      <div><strong>RAG-based PDF QA System</strong><br>
-      <small>LLM retrieval-augmented question answering pipeline for client documents</small></div>
+      <strong>RAG-based PDF QA System</strong>
+      <p>LLM retrieval-augmented question answering pipeline for client documents</p>
     </li>
   </ul>
 </section>
