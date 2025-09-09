@@ -2,135 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Santhosh Kumar — Blog & Portfolio</title>
-  <meta name="description" content="Santhosh Kumar · GenAI specialist and end-to-end AWS deployment expert. Blog and portfolio.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Santhosh Kumar</title>
   <style>
-    :root {
-      --bg: #fff;
-      --fg: #111;
-      --muted: #555;
-      --link: #0066cc;
-      --max-width: 700px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #111;
-        --fg: #eee;
-        --muted: #aaa;
-        --link: #4ea3ff;
-      }
-    }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 2rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.6;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      justify-content: center;
+      background: #fff;
+      color: #111;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    main {
-      width: 100%;
-      max-width: var(--max-width);
-    }
-    header {
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    header p {
-      margin: 0.25rem 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      margin-right: 1rem;
-      color: var(--link);
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { margin-bottom: 2rem; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    header p { margin: 0.3rem 0 0; color: #555; }
+    nav { margin-top: 1rem; }
+    nav a { margin-right: 1rem; font-size: 0.9rem; color: #0066cc; }
     section h2 {
       font-size: 1.2rem;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
     }
-    ul.posts {
-      list-style: none;
-      padding: 0;
-    }
-    ul.posts li {
-      margin: 0.6rem 0;
-    }
-    ul.posts a {
-      color: var(--fg);
-      text-decoration: none;
-    }
-    ul.posts a:hover {
-      text-decoration: underline;
-    }
-    ul.posts time {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 1rem; }
+    li time { display: block; font-size: 0.8rem; color: #666; }
     footer {
       margin-top: 3rem;
       font-size: 0.85rem;
-      color: var(--muted);
+      color: #555;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #111; color: #eee; }
+      header p, li time, footer { color: #aaa; }
+      nav a { color: #4ea3ff; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Santhosh Kumar</h1>
-      <p>GenAI Specialist · End-to-end AWS Deployment · Minimalist tinkerer</p>
-      <nav>
-        <a href="/">Home</a>
-        <a href="#blog">Blog</a>
-        <a href="#about">About</a>
-      </nav>
-    </header>
+  <header>
+    <h1>Santhosh Kumar</h1>
+    <p>GenAI Specialist · AWS Deployment · Minimalist tinkerer</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-    <section id="blog">
-      <h2>Blog</h2>
-      <ul class="posts">
-        <li>
-          <a href="blog/kde-density.html">Why density-based models matter in practice</a>
-          <time>Sep 1, 2025</time>
-        </li>
-        <li>
-          <a href="blog/eks-terraform.html">Simple reproducible EKS + Terraform pipeline</a>
-          <time>Jul 15, 2025</time>
-        </li>
-        <li>
-          <a href="blog/8bit.html">Building an 8-bit computer from scratch</a>
-          <time>Dec 11, 2024</time>
-        </li>
-      </ul>
-    </section>
+  <section id="blog">
+    <h2>Blog</h2>
+    <ul>
+      <li>
+        <a href="blog/kde-density.html">Why density-based models matter in practice</a>
+        <time>Sep 1, 2025</time>
+      </li>
+      <li>
+        <a href="blog/eks-terraform.html">Simple reproducible EKS + Terraform pipeline</a>
+        <time>Jul 15, 2025</time>
+      </li>
+      <li>
+        <a href="blog/8bit.html">Building an 8-bit computer from scratch</a>
+        <time>Dec 11, 2024</time>
+      </li>
+    </ul>
+  </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I design and deploy AI systems — from dataset curation and fine-tuning to cloud deployment with EKS and CI/CD.
-        I also enjoy building small computers from scratch to understand fundamentals.
-      </p>
-    </section>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I design and deploy AI systems — from dataset curation and fine-tuning to
+      cloud deployment with EKS and CI/CD.  
+      I also enjoy building small computers from scratch to understand fundamentals.
+    </p>
+  </section>
 
-    <footer>
-      © 2025 Santhosh Kumar · <a href="mailto:santhosh@example.com">Contact</a>
-    </footer>
-  </main>
+  <footer>
+    © 2025 Santhosh Kumar · <a href="mailto:santhosh@example.com">Contact</a>
+  </footer>
 </body>
 </html>
