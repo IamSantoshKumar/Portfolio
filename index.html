@@ -18,21 +18,7 @@
     }
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    header { margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-    .avatar {
-      font-size: 2.2rem;
-      display: inline-block;
-      animation: wave 2s infinite;
-      transform-origin: 70% 70%;
-    }
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      15% { transform: rotate(15deg); }
-      30% { transform: rotate(-10deg); }
-      45% { transform: rotate(15deg); }
-      60% { transform: rotate(0deg); }
-      100% { transform: rotate(0deg); }
-    }
+    header { margin-bottom: 2.5rem; }
     header h1 { margin: 0; font-size: 1.8rem; }
     header p { margin: 0.3rem 0 0; color: #555; }
     nav { margin-top: 0.5rem; }
@@ -43,82 +29,211 @@
       margin-bottom: 0.5rem;
     }
     ul { list-style: none; padding: 0; }
-    li { margin-bottom: 1rem; }
-    li time { display: block; font-size: 0.8rem; color: #666; }
+    li { margin-bottom: 1.5rem; }
+    li time { display: block; font-size: 0.8rem; color: #666; margin-top: 0.2rem; }
+    /* Timeline */
+    .timeline {
+      border-left: 2px solid #ccc;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+    .timeline li {
+      position: relative;
+      padding-left: 0.5rem;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -1.1rem;
+      top: 0.3rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: #0066cc;
+      border-radius: 50%;
+    }
+    /* Waving hand */
+    .avatar {
+      font-size: 1.5rem;
+      display: inline-block;
+      animation: wave 2s infinite;
+      transform-origin: 70% 70%;
+      margin-left: 0.3rem;
+    }
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(15deg); }
+      30% { transform: rotate(-10deg); }
+      45% { transform: rotate(15deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
     footer {
       margin-top: 3rem;
       font-size: 0.85rem;
       color: #555;
+      text-align: center;
+    }
+    .social {
+      margin-top: 1rem;
+    }
+    .social a {
+      margin: 0 0.5rem;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      color: #555;
+    }
+    .social a:hover {
+      color: #0066cc;
     }
     @media (prefers-color-scheme: dark) {
       body { background: #111; color: #eee; }
       header p, li time, footer { color: #aaa; }
       nav a { color: #4ea3ff; }
+      .timeline li::before { background: #4ea3ff; }
+      .social a { color: #aaa; }
+      .social a:hover { color: #4ea3ff; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="avatar">👋</div>
-    <div>
-      <h1>Santhosh Kumar</h1>
-      <p>GenAI Specialist · AWS Deployment · Minimalist tinkerer</p>
-      <nav>
-        <a href="/">Home</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#blog">Blog</a>
-        <a href="#about">About</a>
-      </nav>
-    </div>
+    <h1>Santhosh Kumar</h1>
+    <p>GenAI Specialist · AWS Deployment · Minimalist tinkerer</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>
+      I have worked on RAG-based automated response generation for health authority 
+      problem statements involving LLaMA and Mistral fine-tuning with LoRA. 
+      I also built Outlook plugins (auto rephrase, document comparison, 
+      professional code generation).  
+      My work has been applied at <strong>Accenture</strong>, <strong>HCL</strong>, 
+      <strong>FIS</strong>, and <strong>Ramco</strong> — most recently with Accenture.  
+    </p>
+    <p>
+      I’ve created infra using Terraform and deployed in AWS EKS with compliance-heavy, 
+      secure setups. I have worked across HR, sales, finance, chatbot, and healthcare use cases.  
+    </p>
+    <p>
+      I share knowledge through LinkedIn, Bear Blog, and Medium, 
+      and maintain small projects on GitHub.  
+      I’m minimalist, creative, and privacy focused.  
+    </p>
+  </section>
 
   <section id="portfolio">
     <h2>Portfolio</h2>
     <ul>
       <li>
         <strong>EKS + Terraform CI/CD</strong><br>
-        <span>A reproducible GitHub Actions pipeline deploying Flask apps on AWS EKS.</span>
+        <span>Reproducible GitHub Actions pipeline deploying Flask apps on AWS EKS.</span>
       </li>
       <li>
         <strong>RAG-based PDF QA</strong><br>
-        <span>Built a retrieval-augmented generation system to answer from client PDFs.</span>
+        <span>Retrieval-augmented generation system to answer from client PDFs.</span>
       </li>
       <li>
         <strong>8-bit Computer</strong><br>
-        <span>Designed and assembled a working 8-bit computer with breadboards & ICs.</span>
+        <span>Working 8-bit computer from scratch with breadboards & ICs.</span>
       </li>
     </ul>
   </section>
 
   <section id="blog">
-    <h2>Blog</h2>
-    <ul>
+    <h2>Blog Timeline</h2>
+    <ul class="timeline">
       <li>
-        <a href="blog/kde-density.html">Why density-based models matter in practice</a>
-        <time>Sep 1, 2025</time>
+        <a href="https://santhoshnotes.bearblog.dev/elegance-lies-in-simple-things/" target="_blank">
+          Elegance Lies in Simple Things
+        </a>
+        <time>Sep 2025 · Bear Blog</time>
       </li>
       <li>
-        <a href="blog/eks-terraform.html">Simple reproducible EKS + Terraform pipeline</a>
-        <time>Jul 15, 2025</time>
-      </li>
-      <li>
-        <a href="blog/8bit.html">Building an 8-bit computer from scratch</a>
-        <time>Dec 11, 2024</time>
+        <a href="https://medium.com/@shanvsanthosh/building-an-8-bit-computer-a-journey-into-classical-computing-13d250c3827a" target="_blank">
+          Building an 8-bit Computer: A Journey into Classical Computing
+        </a>
+        <time>Dec 2024 · Medium</time>
       </li>
     </ul>
   </section>
 
   <section id="about">
-    <h2>About</h2>
+    <h2>About <span class="avatar">👋</span></h2>
     <p>
-      I design and deploy AI systems — from dataset curation and fine-tuning to
-      cloud deployment with EKS and CI/CD.  
-      I also enjoy building small computers from scratch to understand fundamentals.
+      I enjoy solving problems in creative and minimalist ways.  
+      My focus areas include AI model deployment, cloud infra, and 
+      privacy-preserving solutions.  
+      Outside work, I experiment with building classical computers, 
+      astronomy, and writing.
     </p>
+  </section>
+
+  <section id="github">
+    <h2>Recent GitHub Contributions</h2>
+    <ul>
+      <li>
+        <strong>Context-switching on ARM Cortex-M</strong><br>
+        <span>Experimented with PendSV and SysTick for thread scheduling in QEMU.</span>
+      </li>
+      <li>
+        <strong>Portfolio + Blog setup</strong><br>
+        <span>Minimalist personal site hosted on GitHub Pages with HTML + CSS only.</span>
+      </li>
+    </ul>
   </section>
 
   <footer>
     © 2025 Santhosh Kumar · <a href="mailto:santhosh@example.com">Contact</a>
+    <div class="social">
+      <a href="https://github.com/YOURUSERNAME" target="_blank" aria-label="GitHub">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+        2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+        0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+        -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 
+        1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78
+        -.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82
+        -2.15-.08-.2-.36-1.02.08-2.12 0 0 
+        .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 
+        0 1.36.09 2 .27 1.53-1.04 2.2-.82 
+        2.2-.82.44 1.1.16 1.92.08 
+        2.12.51.56.82 1.27.82 2.15 0 
+        3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
+        1.48 0 1.07-.01 1.93-.01 2.2 
+        0 .21.15.46.55.38A8.013 8.013 0 0 0 
+        16 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a href="https://twitter.com/YOURHANDLE" target="_blank" aria-label="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M24 4.56c-.89.39-1.84.65-2.84.77a4.92 
+        4.92 0 0 0 2.15-2.71 9.72 9.72 0 0 
+        1-3.1 1.19 4.87 4.87 0 0 
+        0-8.3 4.44A13.83 13.83 0 0 1 
+        1.64 3.16a4.87 4.87 0 0 0 
+        1.51 6.5 4.82 4.82 0 0 1-2.2-.6v.06a4.87 
+        4.87 0 0 0 3.9 4.77 4.9 4.9 0 0 
+        1-2.19.08 4.87 4.87 0 0 0 4.55 
+        3.38A9.77 9.77 0 0 1 0 19.54a13.82 
+        13.82 0 0 0 7.49 2.19c9 0 13.92-7.45 
+        13.92-13.92 0-.21 0-.42-.02-.63A9.9 
+        9.9 0 0 0 24 4.56z"/></svg>
+      </a>
+      <a href="/rss.xml" target="_blank" aria-label="RSS">
+        <svg viewBox="0 0 24 24"><path d="M6.18 17.82A2.18 2.18 0 1 1 2 20a2.18 
+        2.18 0 0 1 4.18-2.18zM2 9.5v3.18c5.29 0 
+        9.59 4.3 9.59 9.59h3.18C14.77 15.12 8.88 
+        9.23 2 9.5zm0-7v3.18c9.73 0 17.64 
+        7.91 17.64 17.64h3.18C22.82 11.77 
+        12.23 1.18 2 2.5z"/></svg>
+      </a>
+    </div>
   </footer>
 </body>
 </html>
