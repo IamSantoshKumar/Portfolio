@@ -28,6 +28,21 @@
 
   .wave { display: inline-block; transform-origin: 70% 70%; }
 
+  /* Profile Photo */
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px; /* square with slight rounding */
+    border: 2px solid #ccc;
+  }
+
   section { margin-bottom: 3rem; }
 
   /* Timeline */
@@ -41,7 +56,7 @@
   .timeline::before {
     content: '';
     position: absolute;
-    left: 70px; /* vertical line position */
+    left: 70px; /* vertical line */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -124,6 +139,9 @@
 <body>
 
 <header>
+  <div class="profile-photo">
+    <img src="profile.jpg" alt="Santhosh Kumar">
+  </div>
   <h1><span class="wave">👋</span> Hi, I’m Santhosh Kumar</h1>
   <p>Data Scientist · LLMs · Algorithms · Statistics · Creative Problem Solver</p>
 </header>
