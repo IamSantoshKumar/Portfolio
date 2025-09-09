@@ -48,20 +48,14 @@
     .timeline strong { display: block; font-weight: 600; }
     .timeline small { color: #666; font-size: 0.9rem; }
 
-    /* Company icons for timeline */
-    .timeline-icon {
-      font-size: 1.8rem;
+    /* Square company logos */
+    .timeline-logo {
       width: 50px;
       height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: contain;
       margin-right: 0.8rem;
       flex-shrink: 0;
     }
-    .timeline-icon.accenture { color: #00a6d6; }
-    .timeline-icon.hcl { color: #ff6600; }
-    .timeline-icon.fis { color: #0072ce; }
 
     /* GitHub activity */
     .github-activity { list-style: none; padding-left: 0; margin-left: 0; }
@@ -111,21 +105,21 @@
     <h2>Work Timeline</h2>
     <ul class="timeline">
       <li>
-        <span class="timeline-icon accenture">🔹</span>
+        <img src="logos/accenture.png" alt="Accenture" class="timeline-logo">
         <div>
           <strong>2025 — Accenture</strong>
           <small>Automated Health-Authority Response · LoRA fine-tuned LLaMA/Mistral · verifiable RAG workflows</small>
         </div>
       </li>
       <li>
-        <span class="timeline-icon hcl">🔶</span>
+        <img src="logos/hcl.png" alt="HCL" class="timeline-logo">
         <div>
           <strong>2019 — HCL</strong>
           <small>LLM-based Customer Chatbot & Scalable Recommender Systems · contextual retrieval + hybrid ranking</small>
         </div>
       </li>
       <li>
-        <span class="timeline-icon fis">⚡</span>
+        <img src="logos/fis.png" alt="FIS" class="timeline-logo">
         <div>
           <strong>2015 — FIS</strong>
           <small>Transaction Anomaly Detection · hybrid ML/statistical models · real-time scoring & explainable alerts</small>
